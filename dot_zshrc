@@ -56,6 +56,12 @@ if command -v starship &> /dev/null; then
 fi
 
 # =============================================================================
+# 4. Environment Variables
+# =============================================================================
+export VISUAL="micro"
+export EDITOR="micro"
+
+# =============================================================================
 # 5. Syntax Highlighting (MUST BE AT THE VERY END)
 # =============================================================================
 # Enable real-time syntax highlighting for commands
