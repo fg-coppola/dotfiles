@@ -1,0 +1,39 @@
+# Use a single line prompt layout
+add_newline = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold cyan"
+
+[git_branch]
+symbol = "🌱 "
+style = "bold purple"
+
+[git_status]
+style = "red"
+
+# Show tool versions only when relevant files are present
+[python]
+symbol = "🐍 "
+format = '[$symbol$version]($style) '
+style = "yellow"
+
+[java]
+symbol = "☕ "
+format = '[$symbol$version]($style) '
+style = "red"
+
+[rust]
+symbol = "🦀 "
+format = '[$symbol$version]($style) '
+
+# Show execution time for slow commands (over 2 seconds)
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style) "
+style = "yellow"

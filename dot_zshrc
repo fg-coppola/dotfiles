@@ -1,0 +1,64 @@
+# =============================================================================
+# 1. Zsh Core Configuration & Completions
+# =============================================================================
+# Enable completions
+autoload -Uz compinit
+compinit
+autoload -U colors && colors
+
+# History configuration
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+
+# =============================================================================
+# 2. Modern CLI Aliases (Rust Replacements)
+# =============================================================================
+alias ls='eza --icons=always --color=always --group-directories-first'
+alias ll='eza -l --icons=always --color=always --group-directories-first'
+alias la='eza -la --icons=always --color=always --group-directories-first'
+alias cat='bat --theme="TwoDark"'
+alias grep='rg'
+alias find='fd'
+
+# =============================================================================
+# 3. Native Zsh Plugins (Installed via Fedora DNF)
+# =============================================================================
+# Enable fish-like autosuggestions
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# =============================================================================
+# 4. Tool Initializations (mise, zoxide, fzf)
+# =============================================================================
+# Initialize mise (Language and tool manager)
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
+# Initialize zoxide (Smart directory jumper)
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Initialize fzf (Fuzzy finder for terminal history)
+if command -v fzf &> /dev/null; then
+  eval "$(fzf --zsh)"
+fi
+
+# Initialize Starship prompt
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# =============================================================================
+# 5. Syntax Highlighting (MUST BE AT THE VERY END)
+# =============================================================================
+# Enable real-time syntax highlighting for commands
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi

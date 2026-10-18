@@ -1,2 +1,2 @@
 [git]
-    commitMessageTemplate = "{{ promptString \"Commit message\" }}"
+    commitMessageTemplate = {{ `{{ promptString "Commit message" }}` | quote }}
