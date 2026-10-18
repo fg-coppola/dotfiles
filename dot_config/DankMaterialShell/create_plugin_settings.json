@@ -1,0 +1,10 @@
+{
+  "dankKDEConnect": {
+    "enabled": true,
+  },
+  "dockerManager": {
+    "enabled": true,
+    "dockerBinary": "podman",
+    "terminalApp": "ghostty --wait-after-command=true"
+  }
+}
