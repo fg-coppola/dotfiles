@@ -9,7 +9,7 @@ background-opacity = 0.8
 background-blur-radius = 32
 
 # Cursor Configuration
-cursor-style = block
+cursor-style = bar
 cursor-style-blink = true
 
 # Scrollback
